@@ -2,7 +2,7 @@ name: C2 clean compilation
 
 on:
   push:
-    path:
+    paths:
       - 'test/**'
 
 jobs:
