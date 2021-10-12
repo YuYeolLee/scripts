@@ -3,7 +3,7 @@ name: C1 Clean Build
 on:
   push:
     paths:
-    - 'linux'
+      - 'linux'
 
 jobs:
   build:
