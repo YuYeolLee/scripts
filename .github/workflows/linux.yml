@@ -10,14 +10,16 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-    - name: checkout
     - uses: actions/checkout@v2
 
     - name: download
+      shell: bash
       run: wget -O freco https://github.com/YuYeolLee/linux/archive/$(git rev-parse HEAD:./linux).zip
 
     - name: unzip
+      shell: bash
       run: unzip freco
 
     - name: clean build
+      shell: bash
       run: ./build-linux.sh linux-$(git rev-parse HEAD:./linux) tinyconfig
