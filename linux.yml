@@ -1,0 +1,23 @@
+name: C1 Clean Build
+
+on:
+  push:
+    paths:
+    - 'linux'
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: checkout
+    - uses: actions/checkout@v2
+
+    - name: download
+      run: wget -O freco https://github.com/YuYeolLee/linux/archive/$(git rev-parse HEAD:./linux).zip
+
+    - name: unzip
+      run: unzip freco
+
+    - name: clean build
+      run: ./build-linux.sh linux-$(git rev-parse HEAD:./linux) tinyconfig
