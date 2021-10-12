@@ -21,4 +21,6 @@ jobs:
 
     - name: clean build
       shell: bash
-      run: ./build-linux.sh linux-$(git rev-parse HEAD:./linux) tinyconfig
+      run: |
+        ./install-deps.sh
+        ./build-linux.sh linux-$(git rev-parse HEAD:./linux) tinyconfig
