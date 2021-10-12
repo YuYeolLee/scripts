@@ -2,8 +2,7 @@ name: C1 Clean Build
 
 on:
   push:
-    paths:
-      - 'linux'
+    paths: [ linux ]
 
 jobs:
   build:
@@ -14,11 +13,11 @@ jobs:
 
     - name: download
       shell: bash
-      run: wget -O freco https://github.com/YuYeolLee/linux/archive/$(git rev-parse HEAD:./linux).zip
+      run: wget https://github.com/YuYeolLee/linux/archive/$(git rev-parse HEAD:./linux).zip -O upzip
 
     - name: unzip
       shell: bash
-      run: unzip freco
+      run: unzip ./upzip
 
     - name: clean build
       shell: bash
