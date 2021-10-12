@@ -13,11 +13,11 @@ jobs:
 
     - name: download
       shell: bash
-      run: wget https://github.com/YuYeolLee/linux/archive/$(git rev-parse HEAD:./linux).zip -O upzip
+      run: wget https://github.com/YuYeolLee/linux/archive/$(git rev-parse HEAD:./linux).zip
 
     - name: unzip
       shell: bash
-      run: unzip ./upzip
+      run: unzip $(git rev-parse HEAD:./linux).zip
 
     - name: clean build
       shell: bash
