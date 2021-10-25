@@ -1,6 +1,7 @@
 /stretch.id_rsa
 /stretch.id_rsa.pub
 /stretch.img
+/stretch.qcow2
 /chroot
 /build
 /test/*/*.exe
