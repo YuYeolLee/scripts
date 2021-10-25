@@ -24,9 +24,9 @@ fi
 set -eux
 
 ENABLE_KVM=""
-#if output=$(kvm-ok); then
-#	ENABLE_KVM=-enable-kvm
-#fi
+if output=$(kvm-ok); then
+	ENABLE_KVM=-enable-kvm
+fi
 
 $QEMU -smp 2 -m 4G $ENABLE_KVM $LOADVM \
 	-kernel $KERNEL \
